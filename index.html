@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thea Vithean</title>
+    <link rel="stylesheet" href="/CSS/styl1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="/img/LOGO.ICON.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppnis",sans-serif;
+}
+:root{
+    --bg--color:rgb(0, 0, 0);
+    --second-bg-color:rgba(27, 27, 27, 0.642);
+    --text--color:white;
+    --main-color:#0ec8f2;
+    --icon-size: 30px;
+}
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+}
+body{
+    background:var(--bg--color);
+    color:var(--text--color);
+    overflow: hidden;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 12% 4rem;
+    background: rgba(0, 0, 0, 0.361);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+.logo{
+    font-size: 3rem;
+    color: var(--text--color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+.logo span{
+    text-shadow: 0 0 25px var(--main-color);
+}
+.navbar a{
+    font-size: 1.8rem;
+    color: var(--text--color);
+    margin-left: 4rem;
+    font-weight:500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover, .navbar a:active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+span{
+    color: var(--main-color);
+}
+.logo span{
+    color: var(--main-color);
+}
+.home-content h3{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.home-content h1{
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+.home-img{
+    border-radius: 50%;
+}
+.home-img img{
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.home-img img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+.home-content p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-height: 1000px;
+}
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: #00ffee;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+.social-icons a:hover{
+    color: var(--text--color);
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color)
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem ;
+    font-size: 1.6rem;
+    color:black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.btn-group{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.btn-group a:nth-last-of-type(2){
+    background-color: black;
+    color: #00ffee;
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+.btn-group a:nth-last-of-type(2):hover{
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: #00ffee;
+    color:black;
+}
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Web Developer";
+    color:var(--main-color);
+    animation: words  20s  infinite ;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg--color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg--color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content:"Frontend Designer";
+    }
+    21%,
+    40%{
+        content:"Web Designer";
+    }
+    41%,
+    60%{
+        content:"UX / UI Designer";
+    }
+    61%,
+    80%{
+        content:"Web Developer";
+    }
+    81%,
+    100%{
+        content:"Software Tester";
+    }
+}
+@keyframes typing{
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% +  8px);
+    }
+}
+.heading{
+    font-size:8rem;
+    text-align: center;
+    margin:5rem 0;
+}
+.education{
+    padding: 100px 15px;
+    background: var(--second-bg-color);
+}
+.education h2{
+    margin-bottom: 5rem;
+}
+.timeline-items{
+    max-width: 1200px;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.timeline-items::before{
+    content:"";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% - 1px);
+}
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+.timeline-item:nth-child{
+    margin-bottom: 0;
+}
+.timeline-item:nth-child(odd){
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+.timeline-item:nth-child(even){
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: #00ffee;
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top:10px;
+}
+.timeline-date{
+    font-size: 20px;
+    font-weight: 800;
+    color: aliceblue;
+    margin: 6px 0 15px;
+}
+.timeline-content{
+    background-color: var(--bg--color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.timeline-content:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.timeline-content h3{
+    font-size: 20px;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+.timeline-content p{
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #00ffee;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--bg--color);
+}
+.services{
+    background-color: var(--second-bg-color);
+    color: black;
+}
+.services h2{
+    margin-bottom: 5rem;
+    color: white;
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap:2.5rem;
+}
+.services-box{
+    background-color: #00ffee;
+    height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.services-box:hover{
+    background: white;
+    color: black;
+    border:5px solid var(--main-color);
+    transform: scale(1.03);
+}
+.services-box .services-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
+    justify-content: left;
+    align-items: baseline;
+    padding: 5rem 5rem;
+}
+.services-info h4{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+}
+.services-info p{
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+    margin: 0;
+}
+.testimontials{
+    background: var(--bg-color);
+}
+.testimontials-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.testimontials .heading{
+    margin-bottom: 5rem;
+}
+.testimontials-box img{
+    width: 15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+}
+.testimontials-item{
+    min-height: 550px;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.461);
+    border: 3px solid rgba(83, 83, 83, 0.75);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 30px 60px;
+    cursor:pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    color:white;
+    transition: 0.4s ease-in-out;
+}
+.testimontials-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.testimontials-item h2{
+    font-size: 2.8rem;
+}
+.testimontials-item p{
+    font-size: 1.3rem;
+}
+#star{
+    color :gold;
+    font-size: 2rem;
+}
+.contact{
+    background-color: var(--bg--color);
+}
+.contact h2{
+    margin-bottom: 3rem;
+    color:white;
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem;
+    text-align: center;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--text--color);
+    background: var(--second-bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    margin: 1.5rem 0;
+    resize: none;
+}
+.contact form .btn{
+    margin-top: 2rem;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--second-bg-color);
+}
+.footer .social{
+    text-align: center ;
+    padding-bottom: 25px;
+    color: var(--main-color);
+}
+.footer .social a{
+    font-size: 25px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-color);
+}
+.footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer .copyright{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+@media(max-width:1285px){
+    html{
+        font-size: 55%;
+    }
+    .services-container{
+        padding-bottom: 7rem;
+        grid-template-columns: repeat(2,1fr);
+        margin: 0 5rem;
+    }
+}
+@media(max-width:991px){
+    header{
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3% 2rem;
+    }
+    .timeline-items::before{
+        left: 7px;
+    }
+    .timeline-item:nth-child(odd){
+        padding-right: 0;
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even){
+        padding-left: 37px;
+    }
+    .timeline-dot{
+        left: 0;
+    }
+    .services{
+        padding-bottom: 7rem;
+    }
+    .testimontials .wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+@media(max-width:895px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding:1rem 3%;
+        background: rgba(0, 0, 0, 0.79);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display :none;
+    }
+    .navbar .active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin :3rem 0;
+        color: white;
+    }
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+    .home-content h1{
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .home-content p{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .home-img img{
+        width: 56vw;
+    }
+    .services h2{
+        margin-bottom: 3rem;
+    }
+    .services-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+/* .tecnology{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.orbit-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      perspective: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .equator-rotation {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    .orbit {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform-style: preserve-3d;
+    }
+    .icon {
+      position: absolute;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      transition: transform 0.2s;
+    }
+    .icon img {
+      width: 100%;
+      height: 100%;
+    }
+</style>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">Thea <span>Vithean</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#education">Education</a>
+            <a href="#tecnology">Tecnology</a>
+            <a href="#services">Survices</a>
+            <a href="#testimontials">Testimontials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, It's Me <span>Vithean</span></h1>
+            <h3 class="text-animation">I'm a <span></span></h3>
+            <p>Hello, I am Vithean and my nikename is (Ethan). I live in Cambodia Prey Veng. I have 1year of experience in Web Development. I ready enjoy  what I do right now. My job is to build your website to be functional and user-friendly yet still attractive. In addition, I provide a personal touch to your product and ensure that the website catches attention and is easy to use. My goal is to convey your message and identity in the most creative way. If you are interested in hiring me, please contact the listed contact. </p>
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/ethanthean17"><i class='bx bxl-github' ></i></a>
+                <a href="https://www.instagram.com/accounts/settings/v2/your_account/"><i class='bx bxl-instagram-alt' ></i></a>
+                <a href="https://t.me/theavithean"><i class='bx bxl-telegram' ></i></a>
+                <a href="https://x.com/home"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="#" class="btn">Hire</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="logo12.jpg" alt="">
+        </div>
+    </section>
+    <section class="education" id="education">
+        <h2 class="heading">Education</h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                        <h3>High School</h3>
+                        <p>Me start learn heigh school from 2019, At Somdachtecho Hun Sen Pearang and graduated in 2024.Result D</p>
+                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>University</h3>
+                        <p>My university's SETEC Institute,Management Information System is my Major from university , start from CPP C# HTML CSS...</p>
+                    </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3>Intership</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eveniet recusandae ducimus! Quos repellendus hic dicta, tenetur eaque perspiciatis mollitia.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3>First Job</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eveniet recusandae ducimus! Quos repellendus hic dicta, tenetur eaque perspiciatis mollitia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tecnology" id="tecnology">
+        <h2 class="heading">Tecnology</h2>
+        <div class="orbit-wrapper">
+            <div class="equator-rotation" id="equator">
+            <div id="orbit1" class="orbit"></div>
+            <div id="orbit2" class="orbit"></div>
+            <div id="orbit3" class="orbit"></div>
+            <div id="orbit4" class="orbit"></div>
+            <div id="orbit5" class="orbit"></div>
+            <div id="orbit6" class="orbit"></div>
+        </div>
+  </div>
+  </div>
+    </section>
+    <section class="services" id="services">
+        <h2 class="heading">Services</h2>
+        <div class="services-container">
+            <div class="services-box">
+                <div class="services-info">
+                    <h4>UI/UX Designer</h4>
+                    <p>Figma, Adobe XD Ideas, Designlab, Coursera, Interaction Design Foundation (IDF), UXcel, Mobbin, Dribbble, Behance</p>
+                </div>
+            </div>
+            <div class="services-box">
+                <div class="services-info">
+                    <h4>Frontend Development</h4>
+                    <p>1. HTML (HyperText Markup Language) <br>2. CSS (Cascading Style Sheets) <br>3. JavaScript (JS) <br>4.Framework (based on JS) <br>5.Bootstrap <br>6.Tailwind</p>
+                </div>
+            </div>
+            <div class="services-box">
+                <div class="services-info">
+                    <h4>Backend Development</h4>
+                    <p>1. JavaScript (Note.js) <br>2. Python <br>3. PHP <br>4.Javs <br>5.Ruby <br>6.GO(Golang)</p>
+                </div>
+            </div>
+            <div class="services-box">
+                <div class="services-info">
+                    <h4>Testing</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae maxime deleniti id necessitatibus ratione voluptatem quod maiores neque, tempora, sit fugit tenetur nihil doloribus iure molestiae fuga eius porro nisi?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimontials" id="testimontials">
+        <div class="testimontials-box">
+            <h2 class="heading">Testimontials</h2>
+            <div class="wrapper">
+                <div class="testimontials-item">
+                    <img src="kru visan.jpg" alt="">
+                    <h2>Ry Visan</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                    </div>
+                    <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eveniet esse obcaecati. Numquam cupiditate ipsum qui delectus unde libero nihil illo minus possimus dolorem perspiciatis, nam quaerat corporis repellendus velit.</p>
+                </div>
+                <div class="testimontials-item">
+                    <img src="ahkdey2.jpg" alt="">
+                    <h2>Mon Pheakdey</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star-half' id="star"></i>
+                    </div>
+                    <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eveniet esse obcaecati. Numquam cupiditate ipsum qui delectus unde libero nihil illo minus possimus dolorem perspiciatis, nam quaerat corporis repellendus velit.</p>
+                </div>
+                <div class="testimontials-item">
+                    <img src="sokun.jpg" alt="">
+                    <h2>Seing Chansokun</h2>
+                    <div class="rating">
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                        <i class='bx bxs-star' id="star"></i>
+                    </div>
+                    <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eveniet esse obcaecati. Numquam cupiditate ipsum qui delectus unde libero nihil illo minus possimus dolorem perspiciatis, nam quaerat corporis repellendus velit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Phone Number">
+                    <input type="text" placeholder="Subject">
+                </div>
+            </div>
+            <div class="input-group-2">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Massage"></textarea>
+                    <input type="submit" value="Send Message" class="btn">
+                </div>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i class='bx bxl-linkedin' ></i></a>
+            <a href="https://github.com/ethanthean17"><i class='bx bxl-github' ></i></a>
+            <a href="https://www.instagram.com/accounts/settings/v2/your_account/"><i class='bx bxl-instagram-alt' ></i></a>
+            <a href="https://t.me/theavithean"><i class='bx bxl-telegram' ></i></a>
+            <a href="https://x.com/home"><i class='bx bxl-twitter' ></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="">FAQ</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#home">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#testimontials">Testimontials</a></li>
+        </ul>
+        <p class="copyright">
+            © Thea Vithean  |  All Rights Reserved
+        </p>
+    </footer>
+    <script src="/Javascript/script.js"></script>
+    <script>
+    const allLanguages = [
+      { title: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { title: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { title: "C++", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+      { title: "Ruby", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" },
+      { title: "Swift", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" },
+      { title: "C#", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+      { title: "Go", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
+      { title: "PHP", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+      { title: "Rust", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" },
+      { title: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { title: "Kotlin", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+      { title: "Dart", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
+      { title: "Haskell", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg" },
+      { title: "Perl", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/perl/perl-original.svg" }
+    ];
+
+    const orbitSettings = [
+      { id: "orbit1", radius: 270, iconSpeed: 0.015 },
+      { id: "orbit2", radius: 230, iconSpeed: 0.02 },
+      { id: "orbit3", radius: 190, iconSpeed: 0.025 },
+      { id: "orbit4", radius: 150, iconSpeed: 0.03 },
+      { id: "orbit5", radius: 110,  iconSpeed: 0.035 },
+      { id: "orbit6", radius: 70,  iconSpeed: 0.04 }
+    ];
+
+    const iconSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--icon-size'));
+    const orbits = orbitSettings.map((config, index) => {
+      const el = document.getElementById(config.id);
+      const langs = [];
+
+      for (let i = 0; i < 4; i++) {
+        langs.push(allLanguages[(index * 4 + i) % allLanguages.length]);
+      }
+
+      el.style.width = el.style.height = config.radius * 2 + 'px';
+      el.style.marginLeft = -config.radius + 'px';
+      el.style.marginTop = -config.radius + 'px';
+
+      return { element: el, ...config, langs, icons: [], angle: 0 };
+    });
+
+    orbits.forEach(orbit => {
+      orbit.langs.forEach(lang => {
+        const icon = document.createElement('div');
+        icon.className = 'icon';
+        icon.title = lang.title;
+
+        const img = document.createElement('img');
+        img.src = lang.img;
+        img.alt = lang.title;
+
+        icon.appendChild(img);
+        orbit.element.appendChild(icon);
+        orbit.icons.push(icon);
+      });
+    });
+
+    let worldAngle = 0;
+
+    function animate() {
+      worldAngle += 0.002;
+      document.getElementById('equator').style.transform = `rotateY(${worldAngle * 180 / Math.PI}deg)`;
+
+      orbits.forEach(orbit => {
+        orbit.angle += orbit.iconSpeed;
+
+        orbit.icons.forEach((icon, i) => {
+          const angle = (i / orbit.icons.length) * 2 * Math.PI + orbit.angle;
+          const x = orbit.radius * Math.cos(angle);
+          const z = orbit.radius * Math.sin(angle);
+
+          icon.style.left = `${orbit.radius + x - iconSize / 2}px`;
+          icon.style.top = `${orbit.radius - z * 0.3}px`;
+
+          const scale = 0.7 + (z / (2 * orbit.radius));
+          icon.style.transform = `scale(${scale.toFixed(2)})`;
+          icon.style.zIndex = Math.floor(scale * 100);
+        });
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+    let munuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () =>{
+    sections.forEach(sec => {
+        let top =window.scrollY;
+        let offet = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+        if(top >= offet && top < offet + height){
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a [ href*=' + id + ' ]').classList.add('active')
+            })
+        }
+    })
+}
+munuIcon.onclick = () => {
+    munuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+}
+  </script>
+
+</body>
+</html>
